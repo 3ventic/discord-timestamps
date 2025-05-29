@@ -99,7 +99,8 @@ function automaticRelativeDifference(d) {
 }
 
 function updateOutput() {
-	const selectedDate = new Date(`${dateInput.value} ${timeInput.value}`);
+	const selectedDate = new Date(dateInput.valueAsNumber + timeInput.valueAsNumber + new Date(dateInput.valueAsNumber + timeInput.valueAsNumber).getTimezoneOffset() * 60000);
+	console.log(selectedDate);
 	const ts = selectedDate.getTime().toString();
 	output.value = `<t:${ts.substr(0, ts.length - 3)}:${typeInput.value}>`;
 
