@@ -110,7 +110,7 @@ function updateOutput() {
 		preview.textContent = formatter.format(format.duration, format.unit);
 	} else {
 		const formatter = new Intl.DateTimeFormat(navigator.language || 'en', typeFormats[typeInput.value] || {});
-		preview.textContent = formatter.format(selectedDate);
+		preview.textContent = formatter.format(new Date(selectedDate.epochMilliseconds));
 	}
 }
 </script>
