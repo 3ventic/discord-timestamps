@@ -13,6 +13,7 @@ const dateInput = document.getElementById("d");
         output.onmouseover = function () {
           this.select();
         };
+        // Copy to clipboard
         copy.onclick = async () => {
         updateOutput();
           try {
@@ -30,6 +31,7 @@ const dateInput = document.getElementById("d");
           }
         };
 
+        //Startup
         const onload = (_) => {
           const now = new Date();
           dateInput.value = `${now.getFullYear()}-${(now.getMonth() + 1)
@@ -81,7 +83,7 @@ const dateInput = document.getElementById("d");
           }
           return { duration: diff, unit: "seconds" };
         }
-
+        // Last Updated and Output
         function updateOutput() {
           const selectedDate = new Date(
             `${dateInput.value} ${timeInput.value}`
