@@ -32,7 +32,7 @@
           <option value="F">long date with day of week and short time</option>
           <option value="R" selected>relative</option>
         </select>
-		<span>Output</span>
+        <span>Output</span>
         <div class="output-container">
           <span id="preview"></span>
           <input
@@ -45,6 +45,9 @@
         </div>
         <button id="current">Reset to current time</button>
       </div>
+      <div id="copied-notification" style="display: none">
+        Copied to clipboard!
+      </div>
       <script>
         const dateInput = document.getElementById("d");
         const timeInput = document.getElementById("hm");
@@ -53,6 +56,19 @@
         const copy = document.getElementById("copy");
         const current = document.getElementById("current");
         const preview = document.getElementById("preview");
+        const copyButton = document.getElementById("copy");
+        const notification = document.getElementById("copied-notification");
+
+        copyButton.addEventListener("click", () => {
+          notification.style.display = "block";
+          notification.style.opacity = 1;
+          setTimeout(() => {
+            notification.style.opacity = 0;
+            setTimeout(() => {
+              notification.style.display = "none";
+            }, 500);
+          }, 1000);
+        });
 
         dateInput.onchange = updateOutput;
         timeInput.onchange = updateOutput;

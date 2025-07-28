@@ -70,6 +70,39 @@ input, select, button {
   font-family: monospace;
 }
 
+#copy {
+  background-color: #383842;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#copy:hover {
+  background-color: #666;
+}
+
+#copied-notification {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #666;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#copied-notification.fade-out {
+  opacity: 0;
+}
+
 @media (max-width: 50rem) {
   .container {
     display: flex;
