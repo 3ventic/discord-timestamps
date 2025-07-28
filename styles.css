@@ -24,6 +24,8 @@ body {
 span, input[type="date"],input[type="time"],select[id="t"] {
   margin-bottom: 1rem;
 }
+
+
 .container-body {
   position: absolute;
   top: 50%;
@@ -52,6 +54,7 @@ input, select, button {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .output-container #code {
