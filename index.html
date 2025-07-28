@@ -10,8 +10,8 @@
     <div class="container-body">
       <div class="container">
         <span>
-          <h3>Discord Timestamp Generator</h3>
-          <p>
+          <h2>Discord Timestamp Generator</h2>
+          <p id="description">
             Get a dynamic date-time display in your Discord messages. Choose
             your time and copy the code below.
           </p>
@@ -34,7 +34,6 @@
         </select>
         <span>Output</span>
         <div class="output-container">
-          <span id="preview"></span>
           <input
             type="text"
             readonly
@@ -43,39 +42,16 @@
           />
           <button id="copy">Copy</button>
         </div>
+        <span id="preview"></span>
+
         <button id="current">Reset to current time</button>
       </div>
       <div id="copied-notification" style="display: none">
         Copied to clipboard!
       </div>
-      <script>
-        const dateInput = document.getElementById("d");
-        const timeInput = document.getElementById("hm");
-        const typeInput = document.getElementById("t");
-        const output = document.getElementById("code");
-        const copy = document.getElementById("copy");
-        const current = document.getElementById("current");
-        const preview = document.getElementById("preview");
-        const copyButton = document.getElementById("copy");
-        const notification = document.getElementById("copied-notification");
 
-        copyButton.addEventListener("click", () => {
-          notification.style.display = "block";
-          notification.style.opacity = 1;
-          setTimeout(() => {
-            notification.style.opacity = 0;
-            setTimeout(() => {
-              notification.style.display = "none";
-            }, 500);
-          }, 1000);
-        });
-
-        dateInput.onchange = updateOutput;
-        timeInput.onchange = updateOutput;
-        typeInput.onchange = updateOutput;
-        output.onmouseover = function () {
-          this.select();
-        };
+      <script src = 'script.js'></script>
+        
       </script>
     </div>
   </body>
