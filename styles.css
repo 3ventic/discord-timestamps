@@ -1,0 +1,136 @@
+/* Containers */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0F172A;
+  color: #F1F5F9;
+  font-family: sans-serif;
+}
+
+.container {
+  grid-template-columns: 1fr max-content;
+  width: 20rem;
+  margin: 2rem auto;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  font-size: 12px;
+  background-color: #1E293B;
+}
+
+.container-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.output-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.output-container #code {
+  width: 80%;
+  margin-right: 5px;
+}
+
+.output-container #copy {
+  width: 20%;
+}
+
+.container > * {
+  margin: 0.2rem;
+}
+
+#copied-notification {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #6366F1;
+  border: 1px solid #334155;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#copied-notification.fade-out {
+  opacity: 0;
+}
+
+/* Inputs */
+span, input[type="date"],input[type="time"],select[id="t"] {
+  margin-bottom: 1rem;
+  color: #94A3B8;
+}
+
+input, select, button {
+  background-color: #1E293B;
+  color: #F1F5F9;
+  border: 0.5px solid #F1F5F9;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+#code {
+  font-family: monospace;
+}
+
+/* Buttons */
+
+#current {
+  grid-column: span 2;
+  height: 2.5rem;
+}
+
+#copy , #current {
+  background-color: #6366F1;
+  color: #F1F5F9;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#copy:hover , #current:hover {
+  background-color: #818CF8;
+}
+
+/* Text */
+#description {
+  font-size: 10px;
+  color: #94A3B8;
+  margin-left: 5px;
+}
+
+#preview {
+  font-size: 10px;
+  color: #94A3B8;
+  margin-bottom: 1rem;
+}
+
+
+/* Animations */
+
+@media (max-width: 50rem) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .container > * {
+    margin: 1rem 0.2rem;
+  }
+}
+
