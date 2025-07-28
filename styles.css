@@ -40,6 +40,7 @@ span, input[type="date"],input[type="time"],select[id="t"] {
 
 #current {
   grid-column: span 2;
+  height: 2.5rem;
 }
 
 input, select, button {
@@ -70,7 +71,7 @@ input, select, button {
   font-family: monospace;
 }
 
-#copy {
+#copy , #current {
   background-color: #383842;
   color: #fff;
   border: 2px solid #fff;
@@ -80,7 +81,7 @@ input, select, button {
   transition: background-color 0.2s ease-in-out;
 }
 
-#copy:hover {
+#copy:hover , #current:hover {
   background-color: #666;
 }
 
